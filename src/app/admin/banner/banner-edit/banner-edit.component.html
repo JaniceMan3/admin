@@ -1,0 +1,10 @@
+<nb-card>
+  <nb-card-header>
+    Banners
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (edit)="onEdit($event)" (userRowSelect)="onEdit($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

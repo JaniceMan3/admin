@@ -12,6 +12,7 @@ import {
   NbSelectModule,
   NbIconModule,
   NbThemeModule,
+  NbCardModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
@@ -38,6 +39,7 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import { DialogPromptComponent } from './components/dialogs/dialog-name-prompt/dialog-prompt.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -52,6 +54,7 @@ const NB_MODULES = [
   NbSelectModule,
   NbIconModule,
   NbEvaIconsModule,
+  NbCardModule,
 ];
 const COMPONENTS = [
   HeaderComponent,
@@ -61,6 +64,7 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  DialogPromptComponent
 ];
 const PIPES = [
   CapitalizePipe,

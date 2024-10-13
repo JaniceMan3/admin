@@ -11,9 +11,14 @@ import {
 
 export const routes: Routes = [
   {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module')
-      .then(m => m.PagesModule),
+    path: 'home',
+    loadChildren: () => import('./public/public.module')
+      .then(m => m.PublicModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module')
+      .then(m => m.AdminModule),
   },
   {
     path: 'auth',
@@ -45,12 +50,13 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 const config: ExtraOptions = {
   useHash: false,
+  onSameUrlNavigation: 'reload'
 };
 
 @NgModule({

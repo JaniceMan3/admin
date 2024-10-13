@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card *ngIf="!loading">
+      <nb-card-header>
+        <nb-icon (click)="goBackToList()" [icon]="'arrow-ios-back-outline'" pack="eva"></nb-icon>
+        Category {{ category.id }}</nb-card-header>
+      <nb-card-body>
+        <div *ngIf="category.id" class="summary-container">
+          <div>
+            <div>Created At</div>
+            <div class="h6">{{ category.createdAt | date: 'dd:MM:YYYY HH:mm:ss' }}</div>
+          </div>
+          <div>
+            <div>Sub Categories Count</div>
+            <div class="h6">{{ category._count?.SubCategory || 0 }}</div>
+          </div>
+          <div>
+            <div>Products Count</div>
+            <div class="h6">{{ category._count?.Product || 0 }}</div>
+          </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit(categoryForm.form)" #categoryForm="ngForm">
+          <div class="form-group">
+            <label for="categoryName" class="label">Name</label>
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              id="categoryName"
+              placeholder="Name"
+              required
+              [(ngModel)]="category.name"
+              name="name"
+            />
+          </div>
+
+          <div *ngIf="category.id" class="row">
+            <div class="col-md-12 col-lg-12 col-xxxl-12">
+              <nb-card class="list-card" size="small">
+                <nb-card-header>Sub Categories</nb-card-header>
+                <nb-card-body *ngIf="category.SubCategory.length === 0">
+                  No sub categories yet.
+                </nb-card-body>
+                <nb-list *ngIf="category.SubCategory.length > 0">
+                  <nb-list-item *ngFor="let subCategory of category.SubCategory; let i = index;">
+                    {{subCategory.name}}
+                  </nb-list-item>
+                </nb-list>
+              </nb-card>
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <button
+              type="submit"
+              nbButton
+              status="primary"
+              [disabled]="!categoryForm.form.valid"
+            >
+              Submit
+            </button>
+          </div>
+
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

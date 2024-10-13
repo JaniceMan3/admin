@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card *ngIf="!loading">
+      <nb-card-header>Banner {{ banner.id }}</nb-card-header>
+      <nb-card-body>
+        <div *ngIf="banner.id" class="summary-container">
+          <div>
+            <div>Created At</div>
+            <div class="h6">{{ banner.createdAt | date: 'dd:MM:YYYY HH:mm:ss' }}</div>
+          </div>
+          <div>
+            <div>Click Count</div>
+            <div class="h6">{{ banner.clickCount || 0 }}</div>
+          </div>
+          <div>
+            <div>View Count</div>
+            <div class="h6">{{ banner.viewCount || 0 }}</div>
+          </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit(bannerForm.form)" #bannerForm="ngForm">
+          <div class="form-group">
+            <label for="bannerTitle" class="label">Title</label>
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              id="bannerTitle"
+              placeholder="Title"
+              required
+              [(ngModel)]="banner.title"
+              name="title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="bannerText" class="label">Text</label>
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              id="bannerText"
+              placeholder="Text"
+              required
+              [(ngModel)]="banner.text"
+              name="text"
+            />
+          </div>
+          <div class="form-group">
+            <label for="bannerSorting" class="label">Sorting</label>
+            <input
+              type="number"
+              nbInput
+              fullWidth
+              id="bannerSorting"
+              placeholder="Sorting"
+              required
+              [(ngModel)]="banner.sorting"
+              name="sorting"
+            />
+          </div>
+          <div class="form-group">
+            <label for="bannerLink" class="label">Link</label>
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              id="bannerLink"
+              placeholder="Link"
+              required
+              [(ngModel)]="banner.link"
+              name="link"
+            />
+          </div>
+          <div class="form-group">
+            <label for="bannerImgUrl" class="label">ImgUrl</label>
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              id="bannerImgUrl"
+              placeholder="ImgUrl"
+              required
+              [(ngModel)]="banner.imgUrl"
+              name="imgUrl"
+            />
+          </div>
+          <div class="form-group">
+            <nb-checkbox required [(ngModel)]="banner.isActive" name="isActive"
+              >Active</nb-checkbox
+            >
+          </div>
+          <div class="form-group ">
+            <button
+              type="submit"
+              nbButton
+              status="primary"
+              [disabled]="!bannerForm.form.valid"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

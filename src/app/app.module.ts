@@ -15,17 +15,22 @@ import {
   NbChatModule,
   NbDatepickerModule,
   NbDialogModule,
+  NbGlobalPhysicalPosition,
   NbMenuModule,
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache } from '@apollo/client/core';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ApolloModule,
     HttpClientModule,
     AppRoutingModule,
     NbSidebarModule.forRoot(),
@@ -33,7 +38,12 @@ import {
     NbDatepickerModule.forRoot(),
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
-    NbToastrModule.forRoot(),
+    NbToastrModule.forRoot({
+      position: NbGlobalPhysicalPosition.TOP_RIGHT,
+      destroyByClick: true,
+      duplicatesBehaviour: 'all',
+      preventDuplicates: true,
+    }),
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
@@ -41,6 +51,20 @@ import {
     ThemeModule.forRoot(),
   ],
   bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory(httpLink: HttpLink) {
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: 'http://localhost:3001/graphql',
+          }),
+        };
+      },
+      deps: [HttpLink],
+    },
+  ],
 })
 export class AppModule {
 }

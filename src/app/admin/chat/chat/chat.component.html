@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card *ngIf="!loading">
+      <nb-card-header>
+        <nb-icon (click)="goBackToList()" [icon]="'arrow-ios-back-outline'" pack="eva"></nb-icon>
+        Brand {{ brand.id }}</nb-card-header>
+      <nb-card-body>
+        <div *ngIf="brand.id" class="summary-container">
+          <div>
+            <div>Created At</div>
+            <div class="h6">{{ brand.createdAt | date: 'dd:MM:YYYY HH:mm:ss' }}</div>
+          </div>
+          <div>
+            <div>Products Count</div>
+            <div class="h6">{{ brand._count?.products || 0 }}</div>
+          </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit(brandForm.form)" #brandForm="ngForm">
+          <div class="form-group">
+            <label for="brandName" class="label">Name</label>
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              id="brandName"
+              placeholder="Name"
+              required
+              [(ngModel)]="brand.name"
+              name="name"
+            />
+          </div>
+
+          <div class="form-group buttons-row">
+            <button
+              type="submit"
+              nbButton
+              status="primary"
+              [disabled]="!brandForm.form.valid"
+            >
+              Submit
+            </button>
+            <button
+              *ngIf="brand.id"
+              type="button"
+              (click)="onDelete()"
+              nbButton
+              status="danger"
+            >
+              Delete
+            </button>
+          </div>
+
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
