@@ -1,6 +1,6 @@
-@import "../../@theme/styles/themes";
-@import "bootstrap/scss/mixins/breakpoints";
-@import "@nebular/theme/styles/global/breakpoints";
+@import '../../@theme/styles/themes';
+@import 'bootstrap/scss/mixins/breakpoints';
+@import '@nebular/theme/styles/global/breakpoints';
 
 @include nb-install-component() {
   .solar-card nb-card-header {
@@ -55,7 +55,6 @@ mdb-carousel-item {
   color: #8994a3;
   margin-bottom: 1rem;
   background: white;
-  color: #000000e0;
   box-shadow: 0 8px 20px #dae0eb99;
   margin-left: 10px;
   margin-right: 10px;
