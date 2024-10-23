@@ -5,6 +5,7 @@ export class Category {
     name!: string;
     createdAt!: Date;
     updatedAt!: Date | null;
+    icon?: string | null;
     //Products?: Array<Product>;
     SubCategory?: Array<any>; //TODO:
     _count?: CategoryCount;

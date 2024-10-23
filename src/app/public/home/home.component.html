@@ -1,3 +1,35 @@
 <div class="row">
-  Home
+  <div class="col-12">
+      <ngx-home-banner></ngx-home-banner>
+  </div>
+  
+  <div class="col-12">
+    <div class="category">
+      <a href="" *ngFor="let category of categories">
+        <div class="text-container">
+          <nb-icon [icon]="category.icon" pack="eva"></nb-icon>
+          <span class="title">{{category.name}}</span>
+          <i class="line"></i>
+        </div>
+      </a>
+  </div>
+
+  <div class="col-12 ad-row">
+    <div class="ad-container"> 
+      <div class="ad"><p>Publicidade</p></div>
+      
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="d-flex flex-col">
+      <h2>Anúncios patrocinados</h2>
+    </div>
+    <div class="d-flex flex-row flex-nowrap overflow-auto">
+      <div *ngFor="let product of products" class="card-col">
+        <ngx-home-product></ngx-home-product>          
+      </div>
+    </div>
+  </div>
 </div>
+

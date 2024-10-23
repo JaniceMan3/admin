@@ -2,6 +2,10 @@ import {Component, OnDestroy} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
+import { Banner } from '../../admin/banner/banner.model';
+import { Subject } from 'rxjs';
+import { Category } from '../../admin/category/category.model';
+import { Product } from '../../admin/product/product';
 
 interface CardSettings {
   title: string;
@@ -15,85 +19,108 @@ interface CardSettings {
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnDestroy {
+  private destroy$: Subject<void> = new Subject<void>();
+  banners: Banner[];
+  categories: Category[];
+  products: any[];
 
-  private alive = true;
+  constructor() {}
 
-  solarValue: number;
-  lightCard: CardSettings = {
-    title: 'Light',
-    iconClass: 'nb-lightbulb',
-    type: 'primary',
-  };
-  rollerShadesCard: CardSettings = {
-    title: 'Roller Shades',
-    iconClass: 'nb-roller-shades',
-    type: 'success',
-  };
-  wirelessAudioCard: CardSettings = {
-    title: 'Wireless Audio',
-    iconClass: 'nb-audio',
-    type: 'info',
-  };
-  coffeeMakerCard: CardSettings = {
-    title: 'Coffee Maker',
-    iconClass: 'nb-coffee-maker',
-    type: 'warning',
-  };
+  ngOnInit(): void {
+    console.log('init');
 
-  statusCards: string;
-
-  commonStatusCardsSet: CardSettings[] = [
-    this.lightCard,
-    this.rollerShadesCard,
-    this.wirelessAudioCard,
-    this.coffeeMakerCard,
-  ];
-
-  statusCardsByThemes: {
-    default: CardSettings[];
-    cosmic: CardSettings[];
-    corporate: CardSettings[];
-    dark: CardSettings[];
-  } = {
-    default: this.commonStatusCardsSet,
-    cosmic: this.commonStatusCardsSet,
-    corporate: [
+    this.categories = [
       {
-        ...this.lightCard,
-        type: 'warning',
-      },
-      {
-        ...this.rollerShadesCard,
-        type: 'primary',
-      },
-      {
-        ...this.wirelessAudioCard,
-        type: 'danger',
-      },
-      {
-        ...this.coffeeMakerCard,
-        type: 'info',
-      },
-    ],
-    dark: this.commonStatusCardsSet,
-  };
+        "name": "Nutrientes",
+        "id": "Nutrientes",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Iluminação",
+        "id": "Decoração",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "bulb-outline"
+    },
+    {
+        "name": "Hidroponia",
+        "id": "Hidroponia",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "droplet-outline"
+    },
+    {
+        "name": "Irrigação",
+        "id": "Irrigação",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Colheita",
+        "id": "Colheita",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Pragas",
+        "id": "Pragas",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Potes e Vasos",
+        "id": "Potes e Vasos",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Substratos",
+        "id": "Substratos",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Controle",
+        "id": "Controle",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Clonagem",
+        "id": "Clonagem",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "copy-outline"
+    },
+    {
+        "name": "Tendas",
+        "id": "Tendas",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    {
+        "name": "Circulação",
+        "id": "Circulação",
+        "updatedAt": new Date(),
+        "createdAt": new Date(),
+        "icon": "arrow-ios-back-outline"
+    },
+    ]
 
-  constructor(private themeService: NbThemeService,
-              private solarService: SolarData) {
-    this.themeService.getJsTheme()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(theme => {
-        this.statusCards = this.statusCardsByThemes[theme.name];
-    });
-
-    this.solarService.getSolarData()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((data) => {
-        this.solarValue = data;
-      });
+    this.products = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
   }
 
   ngOnDestroy() {
-    this.alive = false;
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

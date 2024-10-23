@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import {
   NbActionsModule,
   NbButtonModule,
@@ -15,6 +15,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { HomeComponent } from './home.component';
 import { FormsModule } from '@angular/forms';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { BannerHomeComponent } from './banner/banner.component';
+import { ProductHomeComponent } from './product/product.component';
 
 @NgModule({
   imports: [
@@ -31,9 +34,13 @@ import { FormsModule } from '@angular/forms';
     NbIconModule,
     NbButtonModule,
     NgxEchartsModule,
+    MdbCarouselModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    BannerHomeComponent,
+    ProductHomeComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }
