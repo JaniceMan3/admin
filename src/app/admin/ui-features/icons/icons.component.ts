@@ -12,14 +12,15 @@ export class IconsComponent {
   evaIcons = [];
 
   constructor(iconsLibrary: NbIconLibraries) {
-    this.evaIcons = Array.from(iconsLibrary.getPack('eva').icons.keys())
-      .filter(icon => icon.indexOf('outline') === -1);
+    //this.evaIcons = Array.from(iconsLibrary.getPack('eva').icons.keys())
+    //  .filter(icon => icon.indexOf('outline') === -1);
 
-      console.log(this.evaIcons);
+     // console.log(this.evaIcons);
 
     iconsLibrary.registerFontPack('fa', { packClass: 'fa', iconClassPrefix: 'fa' });
-    iconsLibrary.registerFontPack('far', { packClass: 'far', iconClassPrefix: 'fa' });
-    iconsLibrary.registerFontPack('ion', { iconClassPrefix: 'ion' });
+    iconsLibrary.registerFontPack('far', { packClass: 'far', iconClassPrefix: 'far' });
+    iconsLibrary.registerFontPack('fas', { packClass: 'fas', iconClassPrefix: 'fas' });    
+    //iconsLibrary.registerFontPack('ion', { iconClassPrefix: 'ion' });
   }
 
   icons = {
@@ -46,10 +47,12 @@ export class IconsComponent {
       'chart-bar', 'barcode', 'bars', 'bed', 'beer',
       'bell', 'bell-slash', 'bicycle', 'binoculars',
       'birthday-cake', 'bolt', 'bomb', 'book', 'bookmark',
-      'briefcase', 'bug', 'building', 'bullhorn',
+      'briefcase', 'bug', 'building', 'bullhorn'
     ],
 
     fontAwesomeRegular: [ 'chart-bar', 'bell', 'bell-slash', 'bookmark', 'building' ],
+
+    fontAwesomeSolid: [ 'chart-bar', 'bell', 'bell-slash', 'bookmark', 'building' ]
   };
 
 }

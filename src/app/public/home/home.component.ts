@@ -35,56 +35,56 @@ export class HomeComponent implements OnDestroy {
         "id": "Nutrientes",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
+        "icon": "fa-star"
     },
     {
         "name": "Iluminação",
         "id": "Decoração",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "bulb-outline"
+        "icon": "fa-lightbulb"
     },
     {
         "name": "Hidroponia",
         "id": "Hidroponia",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "droplet-outline"
+        "icon": "fa-shower"
     },
     {
         "name": "Irrigação",
         "id": "Irrigação",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
+        "icon": "fa-faucet"
     },
     {
         "name": "Colheita",
         "id": "Colheita",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
+        "icon": "fa-tree"
     },
     {
         "name": "Pragas",
         "id": "Pragas",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
+        "icon": "fa-bug"
     },
     {
         "name": "Potes e Vasos",
         "id": "Potes e Vasos",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
+        "icon": "fa-toilet"
     },
     {
         "name": "Substratos",
         "id": "Substratos",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
+        "icon": "fa-solid fa-sack-xmark"
     },
     {
         "name": "Controle",

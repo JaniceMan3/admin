@@ -7,7 +7,9 @@
     <div class="category">
       <a href="" *ngFor="let category of categories">
         <div class="text-container">
-          <nb-icon [icon]="category.icon" pack="eva"></nb-icon>
+         <i class="fa" [ngClass]="category.icon"></i>
+         <!--<i class="fa fa-user"></i>-->
+         <!-- <nb-icon [icon]="category.icon" pack="eva"></nb-icon>-->
           <span class="title">{{category.name}}</span>
           <i class="line"></i>
         </div>
