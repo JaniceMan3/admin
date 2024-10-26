@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header class="card-img-top">
+      <ul>
+        <li>
+          <img [src]="imageUrl" />
+        </li>
+      </ul>
+      <span class="badge">{{ highlight }}</span>
+    </nb-card-header>
+    <nb-card-body>
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">{{ price }}</p>
+    </nb-card-body>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of items" class="list-group-item">{{ item }}</li>
+    </ul>
+  </nb-card>

@@ -7,9 +7,7 @@
     <div class="category">
       <a href="" *ngFor="let category of categories">
         <div class="text-container">
-         <i class="fa" [ngClass]="category.icon"></i>
-         <!--<i class="fa fa-user"></i>-->
-         <!-- <nb-icon [icon]="category.icon" pack="eva"></nb-icon>-->
+         <i class="fa" [ngClass]="category.icon" style="margin-bottom: 10px; font-size: 24px;"></i>
           <span class="title">{{category.name}}</span>
           <i class="line"></i>
         </div>
@@ -33,5 +31,28 @@
       </div>
     </div>
   </div>
+
+  <div class="col-12">
+    <div class="d-flex flex-col">
+      <h2>Anúncios testes</h2>
+    </div>
+    <div class="d-flex flex-row flex-nowrap overflow-auto">
+      <div *ngFor="let paidAds of paidAds" class="card-col">
+        <ngx-home-product></ngx-home-product>          
+      </div>
+    </div>
+  </div>  
+
+  <div class="col-12">
+    <div class="d-flex flex-col">
+      <h2>Anúncios padrão</h2>
+    </div>
+    <div class="d-flex flex-row flex-nowrap overflow-auto">
+      <div *ngFor="let product of products" class="card-col">
+        <ngx-home-product></ngx-home-product>          
+      </div>
+    </div>
+  </div>
+
 </div>
 

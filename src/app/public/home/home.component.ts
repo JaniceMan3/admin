@@ -6,6 +6,8 @@ import { Banner } from '../../admin/banner/banner.model';
 import { Subject } from 'rxjs';
 import { Category } from '../../admin/category/category.model';
 import { Product } from '../../admin/product/product';
+import { PaidAds } from '../../admin/paidAds/paidAds';
+
 
 interface CardSettings {
   title: string;
@@ -23,6 +25,7 @@ export class HomeComponent implements OnDestroy {
   banners: Banner[];
   categories: Category[];
   products: any[];
+  paidAds: any[];
 
   constructor() {}
 
@@ -30,93 +33,54 @@ export class HomeComponent implements OnDestroy {
     console.log('init');
 
     this.categories = [
-      {
-        "name": "Nutrientes",
-        "id": "Nutrientes",
-        "updatedAt": new Date(),
-        "createdAt": new Date(),
-        "icon": "fa-star"
-    },
     {
         "name": "Iluminação",
-        "id": "Decoração",
+        "id": "Iluminacao",
         "updatedAt": new Date(),
         "createdAt": new Date(),
         "icon": "fa-lightbulb"
     },
     {
-        "name": "Hidroponia",
-        "id": "Hidroponia",
+        "name": "Exaustores/Filtros",
+        "id": "Exaustores",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "fa-shower"
+        "icon": "fa-fan"
     },
     {
-        "name": "Irrigação",
-        "id": "Irrigação",
+        "name": "Estufas",
+        "id": "Estufas",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "fa-faucet"
+        "icon": "fa-home"
     },
     {
-        "name": "Colheita",
-        "id": "Colheita",
+        "name": "Medidores",
+        "id": "Medidores",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "fa-tree"
+        "icon": "fa-thermometer"
     },
     {
-        "name": "Pragas",
-        "id": "Pragas",
+        "name": "Acessórios",
+        "id": "Acessorios",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "fa-bug"
+        "icon": "fa-scissors"
     },
     {
-        "name": "Potes e Vasos",
-        "id": "Potes e Vasos",
-        "updatedAt": new Date(),
-        "createdAt": new Date(),
-        "icon": "fa-toilet"
-    },
-    {
-        "name": "Substratos",
-        "id": "Substratos",
-        "updatedAt": new Date(),
-        "createdAt": new Date(),
-        "icon": "fa-solid fa-sack-xmark"
-    },
-    {
-        "name": "Controle",
-        "id": "Controle",
-        "updatedAt": new Date(),
-        "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
-    },
-    {
-        "name": "Clonagem",
-        "id": "Clonagem",
-        "updatedAt": new Date(),
-        "createdAt": new Date(),
-        "icon": "copy-outline"
-    },
-    {
-        "name": "Tendas",
-        "id": "Tendas",
-        "updatedAt": new Date(),
-        "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
-    },
-    {
-        "name": "Circulação",
-        "id": "Circulação",
-        "updatedAt": new Date(),
-        "createdAt": new Date(),
-        "icon": "arrow-ios-back-outline"
-    },
+      "name": "Outros",
+      "id": "Outros",
+      "updatedAt": new Date(),
+      "createdAt": new Date(),
+      "icon": "fa-spider"
+  }    
+    
     ]
 
-    this.products = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    this.products = [1,1,1,1,1,1]
+
+    this.paidAds = [1,1,1]
   }
 
   ngOnDestroy() {
