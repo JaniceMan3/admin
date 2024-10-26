@@ -1,18 +1,30 @@
-<nb-card>
+<nb-card class="product" *ngIf="product">
   <nb-card-header class="card-img-top">
     <ul>
       <li>
-        <img src="https://img.olx.com.br/images/89/890461810585731.webp" />
-
+        <img [src]="product.img_urls[0]" />
       </li>
     </ul>
-    <span class="badge">Destaque</span>
+    <span *ngIf="product.isPromoted" class="badge">Destaque</span>
   </nb-card-header>
   <nb-card-body>
-    <h5 class="card-title">Bioledz 38400 - 800 watts</h5>
-    <p class="card-text">R$ 3.475,99</p>
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">
+      {{ product.price | currency : "BRL" }}
+      <small *ngIf="product.previousPrice" class="ml-2 text-muted" style="text-decoration: line-through">{{ product.previousPrice | currency : "BRL" }}</small>
+    </p>
   </nb-card-body>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
+  <ul class="list-group list-group-flush mb-3">
+    <li class="list-group-item">
+      <p class="card-text mb-1">
+        <i class="fa fa-map-pin mr-2"></i>
+        <small class="text-muted">São Paulo</small>
+      </p>
+      <p class="card-text">
+        <small class="text-muted">{{
+          product.createdAt | date : "dd/MM/yyyy HH:mm"
+        }}</small>
+      </p>
+    </li>
   </ul>
 </nb-card>

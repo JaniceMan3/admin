@@ -24,7 +24,7 @@ export class HomeComponent implements OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   banners: Banner[];
   categories: Category[];
-  products: any[];
+  products: Product[];
   paidAds: any[];
 
   constructor() {}
@@ -78,7 +78,62 @@ export class HomeComponent implements OnDestroy {
     
     ]
 
-    this.products = [1,1,1,1,1,1]
+    this.products = [{
+      id: "1",
+      userId: "1",
+      categoryId: "1",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "Maquina de lavar roupa 14kg sper blaster",
+      description: "",
+      conditionId: "1",
+      price: 3458.10,
+      previousPrice: 4458.10,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "https://img.olx.com.br/images/89/890461810585731.webp"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "1",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "Maquina de lavar roupa 14kg sper blaster 2",
+      description: "",
+      conditionId: "1",
+      price: 3458.10,
+      previousPrice: 4458.10,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: false,
+      viewCount: 0,
+      img_urls: [
+        "https://img.olx.com.br/images/89/890461810585731.webp"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "1",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "Maquina de lavar roupa 14kg sper blaster 3",
+      description: "",
+      conditionId: "1",
+      price: 3458.10,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "https://img.olx.com.br/images/89/890461810585731.webp"
+      ]
+    }]
 
     this.paidAds = [1,1,1]
   }

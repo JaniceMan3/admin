@@ -2,6 +2,10 @@
 @import 'bootstrap/scss/mixins/breakpoints';
 @import '@nebular/theme/styles/global/breakpoints';
 
+.product {
+  cursor: pointer;  
+}
+
 .card-img-top {
   font-size: 1.125rem;
   -webkit-user-select: none;
@@ -73,3 +77,4 @@
   text-overflow: ellipsis;
   padding: 4px 8px;
 }
+
