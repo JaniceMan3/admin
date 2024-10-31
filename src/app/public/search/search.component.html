@@ -1,0 +1,27 @@
+<nb-layout windowMode>
+  <nb-layout-header>
+    <div class="row">
+      <div class="col-12">Header</div>
+    </div>
+  </nb-layout-header>
+
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+    <nb-menu [items]="menu"></nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex flex-row flex-wrap">
+          <div *ngFor="let product of products" class="card-col">
+            <ngx-product-card [product]="product"></ngx-product-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-layout-column>
+
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" right responsive>
+    ad
+  </nb-sidebar>
+</nb-layout>

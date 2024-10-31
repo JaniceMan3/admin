@@ -11,7 +11,7 @@ import {
 
 export const routes: Routes = [
   {
-    path: 'home',
+    path: 'p',
     loadChildren: () => import('./public/public.module')
       .then(m => m.PublicModule),
   },
@@ -50,8 +50,8 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' },
+  { path: '', redirectTo: 'p', pathMatch: 'full' },
+  { path: '**', redirectTo: 'p' },
 ];
 
 const config: ExtraOptions = {

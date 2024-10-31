@@ -3,29 +3,34 @@ import {
   NbActionsModule,
   NbButtonModule,
   NbCardModule,
-  NbTabsetModule,
-  NbUserModule,
+  NbIconModule,
+  NbLayoutModule,
+  NbListModule,
+  NbMenuModule,
   NbRadioModule,
   NbSelectModule,
-  NbListModule,
-  NbIconModule,
+  NbSidebarModule,
+  NbTabsetModule,
+  NbUserModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
-import { ThemeModule } from '../../@theme/theme.module';
-import { HomeComponent } from './home.component';
 import { FormsModule } from '@angular/forms';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { BannerHomeComponent } from './banner/banner.component';
+import { ThemeModule } from '../../@theme/theme.module';
+import { SearchRoutingModule } from './search-routing.module';
+import { SearchComponent } from './search.component';
 import { SharedModule } from '../@shared/shared.module';
-import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
   imports: [
-    HomeRoutingModule,
+    SearchRoutingModule,
+    SharedModule,
     FormsModule,
     ThemeModule,
-    SharedModule,
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbLayoutModule,
     NbCardModule,
     NbUserModule,
     NbButtonModule,
@@ -37,12 +42,12 @@ import { HomeRoutingModule } from './home-routing.module';
     NbIconModule,
     NbButtonModule,
     NgxEchartsModule,
-    MdbCarouselModule
+    MdbCarouselModule,
+    
   ],
   declarations: [
-    HomeComponent,
-    BannerHomeComponent
+    SearchComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomeModule { }
+export class SearchModule { }

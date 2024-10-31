@@ -3,29 +3,24 @@ import {
   NbActionsModule,
   NbButtonModule,
   NbCardModule,
-  NbTabsetModule,
-  NbUserModule,
+  NbIconModule,
+  NbListModule,
   NbRadioModule,
   NbSelectModule,
-  NbListModule,
-  NbIconModule,
+  NbTabsetModule,
+  NbUserModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
-import { ThemeModule } from '../../@theme/theme.module';
-import { HomeComponent } from './home.component';
 import { FormsModule } from '@angular/forms';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { BannerHomeComponent } from './banner/banner.component';
-import { SharedModule } from '../@shared/shared.module';
-import { HomeRoutingModule } from './home-routing.module';
+import { ThemeModule } from '../../@theme/theme.module';
+import { ProductDetailsComponent } from './product-details.component';
 
 @NgModule({
   imports: [
-    HomeRoutingModule,
     FormsModule,
     ThemeModule,
-    SharedModule,
     NbCardModule,
     NbUserModule,
     NbButtonModule,
@@ -40,9 +35,8 @@ import { HomeRoutingModule } from './home-routing.module';
     MdbCarouselModule
   ],
   declarations: [
-    HomeComponent,
-    BannerHomeComponent
+    ProductDetailsComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomeModule { }
+export class ProductDetailsModule { }

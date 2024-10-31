@@ -1,10 +1,13 @@
-<div class="row">
+<div class="row">  
   <div class="col-12">
-      <ngx-home-banner></ngx-home-banner>
-  </div>
-  
-  <div class="col-12">
-    <ngx-category-list [categories]="categories"></ngx-category-list>
+    <div class="category">
+      <a href="" *ngFor="let category of categories">
+        <div class="text-container">
+         <i class="fa" [ngClass]="category.icon" style="margin-bottom: 10px; font-size: 24px;"></i>
+          <span class="title">{{category.name}}</span>
+          <i class="line"></i>
+        </div>
+      </a>
   </div>
 
   <div class="col-12 ad-row">

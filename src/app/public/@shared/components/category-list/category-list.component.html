@@ -1,0 +1,10 @@
+<div class="category-container">
+  <!-- <ngx-category *ngFor="let category of categories" [category]="category"></ngx-category> -->
+  <a class="category" href="" *ngFor="let category of categories" (click)="onClick(category)">
+    <div class="text-container">
+     <i class="fa" [ngClass]="category.icon" style="margin-bottom: 10px; font-size: 24px;"></i>
+      <span class="title">{{category.name}}</span>
+      <i class="line"></i>
+    </div>
+  </a>
+</div>
