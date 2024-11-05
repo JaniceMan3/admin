@@ -95,7 +95,7 @@ export class ProductDetailsComponent implements OnDestroy {
       name: "Maquina de lavar roupa 14kg sper blaster 2",
       description: "",
       conditionId: "1",
-      price: 3458.10,
+      price: 3.5,
       previousPrice: 4458.10,
       createdAt: new Date(),
       isActive: true,

@@ -22,6 +22,7 @@ mdb-carousel {
 
 mdb-carousel-item {
   width: 100%; /* A imagem ocupa toda a largura do carrossel */
-  height: 320px; /* A imagem ocupa toda a altura do carrossel */
+  height: 80%; /* A imagem ocupa toda a altura do carrossel */
+  max-height: 320px;
   object-fit: cover; /* A imagem será cortada para cobrir o espaço sem distorcer */
 }

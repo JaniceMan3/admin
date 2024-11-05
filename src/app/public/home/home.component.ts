@@ -35,42 +35,42 @@ export class HomeComponent implements OnDestroy {
     this.categories = [
     {
         "name": "Iluminação",
-        "id": "Iluminacao",
+        "id": "iluminacao",
         "updatedAt": new Date(),
         "createdAt": new Date(),
         "icon": "fa-lightbulb"
     },
     {
         "name": "Exaustores/Filtros",
-        "id": "Exaustores",
+        "id": "exaustores",
         "updatedAt": new Date(),
         "createdAt": new Date(),
         "icon": "fa-fan"
     },
     {
         "name": "Estufas",
-        "id": "Estufas",
+        "id": "estufas",
         "updatedAt": new Date(),
         "createdAt": new Date(),
         "icon": "fa-home"
     },
     {
         "name": "Medidores",
-        "id": "Medidores",
+        "id": "medidores",
         "updatedAt": new Date(),
         "createdAt": new Date(),
         "icon": "fa-thermometer"
     },
     {
         "name": "Acessórios",
-        "id": "Acessorios",
+        "id": "acessorios",
         "updatedAt": new Date(),
         "createdAt": new Date(),
         "icon": "fa-scissors"
     },
     {
       "name": "Outros",
-      "id": "Outros",
+      "id": "outros",
       "updatedAt": new Date(),
       "createdAt": new Date(),
       "icon": "fa-spider"
@@ -81,61 +81,186 @@ export class HomeComponent implements OnDestroy {
     this.products = [{
       id: "1",
       userId: "1",
-      categoryId: "1",
+      categoryId: "exaustores",
       sub_categoryId: "1",
       brandId: "1",
-      name: "Maquina de lavar roupa 14kg sper blaster",
+      name: "Exaustor Leds Indoor",
       description: "",
       conditionId: "1",
-      price: 3458.10,
-      previousPrice: 4458.10,
+      price: 177,
+      previousPrice: 249,
       createdAt: new Date(),
       isActive: true,
       isPromoted: true,
       viewCount: 0,
       img_urls: [
-        "https://img.olx.com.br/images/89/890461810585731.webp"
+        "../../../assets/images/Exaustor1.png"
       ]
     },
     {
       id: "1",
       userId: "1",
-      categoryId: "1",
+      categoryId: "exaustores",
       sub_categoryId: "1",
       brandId: "1",
-      name: "Maquina de lavar roupa 14kg sper blaster 2",
+      name: "Exaustor MarsHydro",
       description: "",
       conditionId: "1",
-      price: 3458.10,
-      previousPrice: 4458.10,
+      price: 149,
+      previousPrice: 199,
       createdAt: new Date(),
       isActive: true,
       isPromoted: false,
       viewCount: 0,
       img_urls: [
-        "https://img.olx.com.br/images/89/890461810585731.webp"
+        "../../../assets/images/Exaustor2.png"
       ]
     },
     {
       id: "1",
       userId: "1",
-      categoryId: "1",
+      categoryId: "exaustores",
       sub_categoryId: "1",
       brandId: "1",
-      name: "Maquina de lavar roupa 14kg sper blaster 3",
+      name: "Exaustor Branco",
       description: "",
       conditionId: "1",
-      price: 3458.10,
+      price: 120,
       createdAt: new Date(),
       isActive: true,
       isPromoted: true,
       viewCount: 0,
       img_urls: [
-        "https://img.olx.com.br/images/89/890461810585731.webp"
+        "../../../assets/images/Exaustor3.png"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "exaustores",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "Exaustor HighPro",
+      description: "",
+      conditionId: "1",
+      price: 199,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "../../../assets/images/Exaustor4.png"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "iluminacao",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "LED 640W",
+      description: "",
+      conditionId: "1",
+      price: 1899,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "../../../assets/images/Iluminacao1.png"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "iluminacao",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "LED Duplo",
+      description: "",
+      conditionId: "1",
+      price: 1199,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "../../../assets/images/Iluminacao2.png"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "iluminacao",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "LED 240W",
+      description: "",
+      conditionId: "1",
+      price: 649,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "../../../assets/images/Iluminacao3.png"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "estufas",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "Estufa Simples",
+      description: "",
+      conditionId: "1",
+      price: 650,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "../../../assets/images/tenda2.jpg"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "estufas",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "Estufa Tripla",
+      description: "",
+      conditionId: "1",
+      price: 2400,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "../../../assets/images/tenda8.png"
+      ]
+    },
+    {
+      id: "1",
+      userId: "1",
+      categoryId: "estufas",
+      sub_categoryId: "1",
+      brandId: "1",
+      name: "Estufa Master",
+      description: "",
+      conditionId: "1",
+      price: 1600,
+      createdAt: new Date(),
+      isActive: true,
+      isPromoted: true,
+      viewCount: 0,
+      img_urls: [
+        "../../../assets/images/tenda5.png"
       ]
     }]
 
-    this.paidAds = [1,1,1]
   }
 
   ngOnDestroy() {
