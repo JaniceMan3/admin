@@ -10,6 +10,7 @@
   <nb-select
     [selected]="currentTheme"
     (selectedChange)="changeTheme($event)"
+    [hidden]="true"
     status="primary"
   >
     <nb-option *ngFor="let theme of themes" [value]="theme.value">

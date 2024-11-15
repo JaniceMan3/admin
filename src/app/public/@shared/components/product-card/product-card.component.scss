@@ -4,6 +4,8 @@
 
 .product {
   cursor: pointer;  
+  min-height: 365px;
+  max-height: 365px;
 }
 
 .card-img-top {
@@ -60,7 +62,7 @@
 
 .card-img-top span.badge {
   align-items: center;
-  background: blue;
+  background: #107e02;
   color:white;
   font-weight: 600;
   overflow: hidden;

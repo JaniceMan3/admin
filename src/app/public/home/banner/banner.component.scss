@@ -17,12 +17,17 @@
 
 mdb-carousel {
   width: 100%; /* Largura total do carrossel */
-  height: 320px; /* Altura do carrossel */
+  height: auto; /* Altura do carrossel */
 }
 
-mdb-carousel-item {
+.carousel-item {
   width: 100%; /* A imagem ocupa toda a largura do carrossel */
-  height: 80%; /* A imagem ocupa toda a altura do carrossel */
-  max-height: 320px;
-  object-fit: cover; /* A imagem será cortada para cobrir o espaço sem distorcer */
+  height: 367px; /* A imagem ocupa toda a altura do carrossel */
+  max-height: 367px;  
+}
+
+.carousel-item img {
+  width: 100%; /* A imagem ocupa toda a largura do carrossel */
+  height: 367px; /* A imagem ocupa toda a altura do carrossel */
+  max-height: 367px;  
 }

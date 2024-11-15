@@ -25,6 +25,7 @@ export class HomeComponent implements OnDestroy {
   banners: Banner[];
   categories: Category[];
   products: Product[];
+  recentProducts: Product[];
   paidAds: any[];
 
   constructor() {}
@@ -66,14 +67,14 @@ export class HomeComponent implements OnDestroy {
         "id": "acessorios",
         "updatedAt": new Date(),
         "createdAt": new Date(),
-        "icon": "fa-scissors"
+        "icon": "fa-binoculars"
     },
     {
       "name": "Outros",
       "id": "outros",
       "updatedAt": new Date(),
       "createdAt": new Date(),
-      "icon": "fa-spider"
+      "icon": "fa-plus"
   }    
     
     ]
@@ -110,7 +111,7 @@ export class HomeComponent implements OnDestroy {
       previousPrice: 199,
       createdAt: new Date(),
       isActive: true,
-      isPromoted: false,
+      isPromoted: true,
       viewCount: 0,
       img_urls: [
         "../../../assets/images/Exaustor2.png"
@@ -260,6 +261,15 @@ export class HomeComponent implements OnDestroy {
         "../../../assets/images/tenda5.png"
       ]
     }]
+
+    this.recentProducts = JSON.parse(JSON.stringify(this.products))
+    
+    this.recentProducts = this.recentProducts.reverse()
+    
+    this.recentProducts.forEach(p => {
+      p.isPromoted = false;
+      return p;
+    });
 
   }
 
